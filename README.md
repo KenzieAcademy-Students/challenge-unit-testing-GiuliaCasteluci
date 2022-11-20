@@ -9,3 +9,5 @@ Customize this README.md however you want to turn it into documentation for your
 What different approaches or techniques did you consider when planning your implementation? What were the advantages and disadvantages of those alternatives?
 
 _(Put your reflection answer here.)_
+i considered using the basic and modern array methods such as 
+    .split(" ") ; filter(); reverse(); join(" "); or even for loop when necessary
