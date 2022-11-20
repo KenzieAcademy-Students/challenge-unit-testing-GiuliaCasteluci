@@ -56,6 +56,8 @@ maximumNumber();
 function calculateRemainder(g, p) {
   return g % p;
 }
+console.log(calculateRemainder(17,3));
+
 
 //distinctNumbers that takes an array of numbers (including duplicates) as a parameter and returns the distinct values as a comma-separated string (ex: distinctNumbers([1, 3, 5, 3, 7, 3, 1, 1, 5]) will return "1, 3, 5, 7").
 function distinctNumbers(arr) {
@@ -63,9 +65,32 @@ function distinctNumbers(arr) {
   const str = arr.join(", ");
   return arr;
 }
+console.log(distinctNumbers());
 
 // countValues that takes an array of numbers as a parameter and returns the distinct values and their counts as a comma-separated string (ex: countValues([1, 3, 5, 3, 7, 3, 1, 1, 5]) will return "1(3), 3(3), 5(2), 7(1)"). If the parameter is anything other than an array, return null; as long as the function receives an array, assume all its elements are numbers.
+
+arr = [1, 3, 5, 3, 7, 3, 1, 1, 5];
+
 function countValues(arr) {
-  arr = [1, 3, 5, 3, 7, 3, 1, 1, 5];
+  arr = arr.sort();
+  let num = arr[0];
+  let result = {};
+  let count = 0;
+
+  arr.forEach((n) => {
+    result[n] = (result[n] || 0) + 1
+  });
+  let keys = Object.keys(result)
+  let str = " "
+  keys.forEach((k) => {
+    str += `${k}(${result[k]}), ` 
+  })
+  return str;
+}
+console.log(countValues(arr));
+
+
+//evaluateExpression that takes a string of basic arithmetic expressions (only variables, +, and -) and an object describing a set of variable/value pairs as parameters and returns the result of the expression (ex: evaluateExpression("a + b + c - d", {a: 1, b: 7, c: 3, d: 14}) will return -3). If the parameters are anything other than a string and an object, return null; as long as the function receives an object, assume all its keys are numbers.
+function evaluateExpression(){
   //code
 }
