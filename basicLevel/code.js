@@ -107,9 +107,24 @@ console.log(
 );
 
 //evaluateExpression that takes a string of basic arithmetic expressions (only variables, +, and -) and an object describing a set of variable/value pairs as parameters and returns the result of the expression (ex: evaluateExpression("a + b + c - d", {a: 1, b: 7, c: 3, d: 14}) will return -3). If the parameters are anything other than a string and an object, return null; as long as the function receives an object, assume all its keys are numbers.
-function evaluateExpression() {
-  //code
+function evaluateExpression(string, object) {
+  if(typeof(object) !== 'object' && typeof string !== 'strin') {
+      return null
+  }
+  let split = string.split(' ')
+  result = 0
+  const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  split.forEach((letter) => {
+      if(alphabet.includes(letter.toUpperCase())) {
+          result += object[letter].toString()
+      } else {
+          result += letter
+      }
+  })
+  return eval(result)
 }
+evaluateExpression('a + b + c - d', {a:1, b:7, c: 3, d: 14} )
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //unit test
 
@@ -140,7 +155,7 @@ console.assert(reverseSentence !== " ", "failed the expected result");
 
 //calculateRemainder
 console.assert(calculateRemainder % 1 !== calculateRemainder, "errorMSG ");
-console.assert(calculateRemainder === NaN, "Expression returned false");
+console.assert(calculateRemainder === NaN, "Expression returned false");// failed assert example
 
 //distinctNumbers
 console.assert(distinctNumbers != [], "failed");
@@ -151,3 +166,5 @@ console.assert(countValues == countValues, "failed");
 console.assert(typeof countValues !== [], "message error");
 
 //evaluateExpression
+console.assert(evaluateExpression('a + b + c - d', {a:1, b:7, c: 3, d: 14}) === -3, 'failed')
+console.assert(evaluateExpression(1,2) === null, 'failed')
