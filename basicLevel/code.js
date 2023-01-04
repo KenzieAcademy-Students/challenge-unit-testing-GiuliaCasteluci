@@ -148,9 +148,9 @@ console.assert(
 
 //reverseSentence
 console.assert(
-  "casteluci stefanelli giulia" !== reverseSentence,
-  "your reserve setence function failed the test"
-);
+  reverseSentence("giulia stefanelli casteluci") === "casteluci stefanelli giulia",
+    "your reserve sentence function failed the test"
+  );
 console.assert(reverseSentence !== " ", "failed the expected result");
 
 //calculateRemainder
