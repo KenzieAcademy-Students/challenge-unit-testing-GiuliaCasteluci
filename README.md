@@ -6,6 +6,5 @@ Customize this README.md however you want to turn it into documentation for your
 
 ## Reflection
 
-What different approaches or techniques did you consider when planning your implementation? What were the advantages and disadvantages of those alternatives?
-
-_(Put your reflection answer here.)_
+What different approaches or techniques did you consider when planning your implementation? What were the advantages and disadvantages of those alternatives? I consider using Jest but could not make it work for some reason, ill definitely try again next assginment. Also, for the functions i just tried to keep it simple  using the basic and modern array methods such as 
+    .split(" ") ; filter(); reverse(); join(" "); or even for loop when necessary
